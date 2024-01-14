@@ -256,6 +256,10 @@ unsigned _stdcall  TcpInet::tcpthreadproc(void* lpvoid)//处理TCP的线程
 unsigned _stdcall TcpInet::messThreadProc(void* lpvoid)
 {
     TcpInet* pthis = (TcpInet*)lpvoid;
+    pthis->m_messock = socket(AF_INET, SOCK_DGRAM, 0);
+    //severmess ss;
+    //ss.bianhao = -1;
+    //ss.antcon = pthis->m_kernel->getconnectant();
 
     sockaddr_in socklineLoad;
     socklineLoad.sin_port = htons(ProxyPort);

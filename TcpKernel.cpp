@@ -460,6 +460,7 @@ void TcpKernel::sendmessage_rs(char* cstr, stu_udpsock udp)
 		m_idtomess[rs->m_id].idtomess[rs->f_id].pop_front();
 		//需要加锁
 	}
+	
 	else
 	{
 		m_mutex.unlock();
